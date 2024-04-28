@@ -1,5 +1,8 @@
 package br.com.wagnercaetano.spaceores;
 
+import br.com.wagnercaetano.block.ModBlocks;
+import br.com.wagnercaetano.item.ModCreativeModeTabs;
+import br.com.wagnercaetano.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -16,19 +19,22 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
-@Mod(SpaceOres.MODID)
+@Mod(SpaceOres.MOD_ID)
 public class SpaceOres
 {
-    public static final String MODID = "spaceores";
+    public static final String MOD_ID = "spaceores";
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public SpaceOres()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModCreativeModeTabs.register(modEventBus);
+
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
-
-
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
 
@@ -43,7 +49,17 @@ public class SpaceOres
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.GALACTITE);
+            event.accept(ModItems.RAW_GALACTITE);
+        }
 
+        if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
+            event.accept(ModBlocks.GALACTITE_BLOCK);
+            event.accept(ModBlocks.RAW_GALACTITE_BLOCK);
+            event.accept(ModBlocks.GALACTITE_ORE);
+            event.accept(ModBlocks.DEEPSLATE_GALACTITE_ORE);
+            event.accept(ModBlocks.NETHER_GALACTITE_ORE);
+            event.accept(ModBlocks.END_STONE_GALACTITE_ORE);
         }
     }
 
@@ -53,7 +69,7 @@ public class SpaceOres
 
     }
 
-    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents
     {
         @SubscribeEvent

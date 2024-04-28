@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "spaceores:galactite_block"
+    }
+  ],
+  "result": {
+    "item": "spaceores:galactite",
+    "count": 9
+  }
+}

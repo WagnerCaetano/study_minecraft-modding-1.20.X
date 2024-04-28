@@ -1,0 +1,14 @@
+{
+  "item.spaceores.galactite": "Galactite Refinado",
+  "item.spaceores.raw_galactite": "Galactite Bruto",
+
+  "block.spaceores.galactite_block": "Bloco de Galactite Refinado",
+  "block.spaceores.raw_galactite_block": "Minério de Galactite Bruto",
+
+  "block.spaceores.galactite_ore": "Minério de Galactite",
+  "block.spaceores.deepslate_galactite_ore": "Minério de Galactite de Pedra Inferior",
+  "block.spaceores.end_stone_galactite_ore": "Minério de Galactite do End",
+  "block.spaceores.nether_galactite_ore": "Minério de Galactite do Nether",
+
+  "creativetab.spaceores": "SpaceOres Tab"
+}
