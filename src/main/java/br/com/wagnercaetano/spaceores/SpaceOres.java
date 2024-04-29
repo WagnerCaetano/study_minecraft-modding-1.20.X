@@ -51,6 +51,7 @@ public class SpaceOres
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.GALACTITE);
             event.accept(ModItems.RAW_GALACTITE);
+            event.accept(ModItems.PINE_CONE);
         }
 
         if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
@@ -60,6 +61,18 @@ public class SpaceOres
             event.accept(ModBlocks.DEEPSLATE_GALACTITE_ORE);
             event.accept(ModBlocks.NETHER_GALACTITE_ORE);
             event.accept(ModBlocks.END_STONE_GALACTITE_ORE);
+        }
+
+        if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
+            event.accept(ModItems.STRAWBERRY);
+        }
+
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.SOUND_BLOCK);
+        }
+
+        if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+            event.accept(ModItems.METAL_DETECTOR);
         }
     }
 

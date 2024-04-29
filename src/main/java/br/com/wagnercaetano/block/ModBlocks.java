@@ -1,5 +1,6 @@
 package br.com.wagnercaetano.block;
 
+import br.com.wagnercaetano.block.custom.SoundBlock;
 import br.com.wagnercaetano.item.ModItems;
 import br.com.wagnercaetano.spaceores.SpaceOres;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -25,6 +26,9 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.CALCITE)));
     public static final RegistryObject<Block> RAW_GALACTITE_BLOCK = registerBlock("raw_galactite_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.RAW_IRON_BLOCK).sound(SoundType.CALCITE)));
+
+    public static final RegistryObject<Block> SOUND_BLOCK = registerBlock("sound_block",
+            () -> new SoundBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
 
     public static final RegistryObject<Block> GALACTITE_ORE = registerBlock("galactite_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE)

@@ -6,7 +6,6 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -22,6 +21,8 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.GALACTITE.get());
                         pOutput.accept(ModItems.RAW_GALACTITE.get());
 
+                        pOutput.accept(ModItems.METAL_DETECTOR.get());
+
                         pOutput.accept(ModBlocks.GALACTITE_BLOCK.get());
                         pOutput.accept(ModBlocks.RAW_GALACTITE_BLOCK.get());
 
@@ -29,6 +30,12 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.DEEPSLATE_GALACTITE_ORE.get());
                         pOutput.accept(ModBlocks.NETHER_GALACTITE_ORE.get());
                         pOutput.accept(ModBlocks.END_STONE_GALACTITE_ORE.get());
+
+                        pOutput.accept(ModBlocks.SOUND_BLOCK.get());
+
+                        pOutput.accept(ModItems.STRAWBERRY.get());
+
+                        pOutput.accept(ModItems.PINE_CONE.get());
 
                     })
                     .build());

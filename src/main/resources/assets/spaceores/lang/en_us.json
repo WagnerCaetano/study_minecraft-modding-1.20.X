@@ -2,6 +2,14 @@
   "item.spaceores.galactite": "Refined Galactite",
   "item.spaceores.raw_galactite": "Raw Galactite",
 
+  "item.spaceores.metal_detector": "Metal Detector",
+
+  "item.spaceores.strawberry": "Strawberry",
+
+  "item.spaceores.pine_cone": "Pine Cone",
+
+  "tooltip.spaceores.metal_detector": "Finds valuables underground!",
+
   "block.spaceores.galactite_block": "Block of Refined Galactite",
   "block.spaceores.raw_galactite_block": "Block of Raw Galactite",
 
@@ -9,6 +17,8 @@
   "block.spaceores.deepslate_galactite_ore": "Deepslate Galactite Ore",
   "block.spaceores.end_stone_galactite_ore": "Endstone Galactite Ore",
   "block.spaceores.nether_galactite_ore": "Nether Galactite Ore",
+
+  "block.spaceores.sound_block": "Sound Block",
 
   "creativetab.spaceores": "SpaceOres Tab"
 }
