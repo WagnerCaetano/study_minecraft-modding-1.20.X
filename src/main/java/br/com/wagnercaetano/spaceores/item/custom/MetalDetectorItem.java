@@ -1,6 +1,6 @@
-package br.com.wagnercaetano.item.custom;
+package br.com.wagnercaetano.spaceores.item.custom;
 
-import br.com.wagnercaetano.item.util.ModTags;
+import br.com.wagnercaetano.spaceores.util.ModTags;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;

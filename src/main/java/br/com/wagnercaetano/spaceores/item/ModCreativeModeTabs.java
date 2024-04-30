@@ -1,6 +1,6 @@
-package br.com.wagnercaetano.item;
+package br.com.wagnercaetano.spaceores.item;
 
-import br.com.wagnercaetano.block.ModBlocks;
+import br.com.wagnercaetano.spaceores.block.ModBlocks;
 import br.com.wagnercaetano.spaceores.SpaceOres;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;

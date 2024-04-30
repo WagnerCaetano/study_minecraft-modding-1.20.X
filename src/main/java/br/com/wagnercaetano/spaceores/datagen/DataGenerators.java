@@ -1,4 +1,4 @@
-package br.com.wagnercaetano.datagen;
+package br.com.wagnercaetano.spaceores.datagen;
 
 import br.com.wagnercaetano.spaceores.SpaceOres;
 import net.minecraft.core.HolderLookup;

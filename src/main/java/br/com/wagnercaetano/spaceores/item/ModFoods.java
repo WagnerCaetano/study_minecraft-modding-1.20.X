@@ -1,4 +1,4 @@
-package br.com.wagnercaetano.item;
+package br.com.wagnercaetano.spaceores.item;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;

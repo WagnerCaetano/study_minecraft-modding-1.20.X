@@ -1,8 +1,8 @@
-package br.com.wagnercaetano.item;
+package br.com.wagnercaetano.spaceores.item;
 
-import br.com.wagnercaetano.item.custom.FuelItem;
-import br.com.wagnercaetano.item.custom.GalactiteStaff;
-import br.com.wagnercaetano.item.custom.MetalDetectorItem;
+import br.com.wagnercaetano.spaceores.item.custom.FuelItem;
+import br.com.wagnercaetano.spaceores.item.custom.GalactiteStaff;
+import br.com.wagnercaetano.spaceores.item.custom.MetalDetectorItem;
 import br.com.wagnercaetano.spaceores.SpaceOres;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;

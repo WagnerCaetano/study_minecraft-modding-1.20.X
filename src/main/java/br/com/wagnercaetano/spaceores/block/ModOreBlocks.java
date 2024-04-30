@@ -1,5 +1,6 @@
-package br.com.wagnercaetano.block;
+package br.com.wagnercaetano.spaceores.block;
 
+import br.com.wagnercaetano.spaceores.util.RegisterBlockUtils;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -8,8 +9,6 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
-
-import static br.com.wagnercaetano.block.util.RegisterBlockUtils.registerBlock;
 
 public enum ModOreBlocks {
 
@@ -35,7 +34,7 @@ public enum ModOreBlocks {
     public static RegistryObject<Block> registryObjectFromName(DeferredRegister<Block> blockList, String name) {
         for (ModOreBlocks block : ModOreBlocks.values()) {
             if (block.name.equals(name)) {
-                return registerBlock(blockList, block.name,
+                return RegisterBlockUtils.registerBlock(blockList, block.name,
                         () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(block.copyParameter)
                                 .sound(SoundType.CALCITE).strength(block.strengthParameter),
                                 UniformInt.of(block.minExperienceParameter, block.maxExperienceParameter)));

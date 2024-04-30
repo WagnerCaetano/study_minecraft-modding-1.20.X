@@ -1,4 +1,4 @@
-package br.com.wagnercaetano.block.custom;
+package br.com.wagnercaetano.spaceores.block.custom;
 
 import net.minecraft.core.BlockPos;
 

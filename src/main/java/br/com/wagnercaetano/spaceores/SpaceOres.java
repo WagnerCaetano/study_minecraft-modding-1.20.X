@@ -1,8 +1,8 @@
 package br.com.wagnercaetano.spaceores;
 
-import br.com.wagnercaetano.block.ModBlocks;
-import br.com.wagnercaetano.item.ModCreativeModeTabs;
-import br.com.wagnercaetano.item.ModItems;
+import br.com.wagnercaetano.spaceores.block.ModBlocks;
+import br.com.wagnercaetano.spaceores.item.ModCreativeModeTabs;
+import br.com.wagnercaetano.spaceores.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;

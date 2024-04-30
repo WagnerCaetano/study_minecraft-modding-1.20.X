@@ -1,4 +1,4 @@
-package br.com.wagnercaetano.item.custom;
+package br.com.wagnercaetano.spaceores.item.custom;
 
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;

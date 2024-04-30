@@ -1,4 +1,4 @@
-package br.com.wagnercaetano.item.util;
+package br.com.wagnercaetano.spaceores.util;
 
 import br.com.wagnercaetano.spaceores.SpaceOres;
 import net.minecraft.resources.ResourceLocation;

@@ -1,7 +1,8 @@
-package br.com.wagnercaetano.block;
+package br.com.wagnercaetano.spaceores.block;
 
-import br.com.wagnercaetano.block.custom.SoundBlock;
+import br.com.wagnercaetano.spaceores.block.custom.SoundBlock;
 import br.com.wagnercaetano.spaceores.SpaceOres;
+import br.com.wagnercaetano.spaceores.util.RegisterBlockUtils;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
@@ -11,18 +12,16 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import static br.com.wagnercaetano.block.util.RegisterBlockUtils.registerBlock;
-
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, SpaceOres.MOD_ID);
 
-    public static final RegistryObject<Block> GALACTITE_BLOCK = registerBlock(BLOCKS, "galactite_block",
+    public static final RegistryObject<Block> GALACTITE_BLOCK = RegisterBlockUtils.registerBlock(BLOCKS, "galactite_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.CALCITE)));
-    public static final RegistryObject<Block> RAW_GALACTITE_BLOCK = registerBlock(BLOCKS, "raw_galactite_block",
+    public static final RegistryObject<Block> RAW_GALACTITE_BLOCK = RegisterBlockUtils.registerBlock(BLOCKS, "raw_galactite_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.RAW_IRON_BLOCK).sound(SoundType.CALCITE)));
 
-    public static final RegistryObject<Block> SOUND_BLOCK = registerBlock(BLOCKS, "sound_block",
+    public static final RegistryObject<Block> SOUND_BLOCK = RegisterBlockUtils.registerBlock(BLOCKS, "sound_block",
             () -> new SoundBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
 
     public static final RegistryObject<Block> GALACTITE_ORE = ModOreBlocks.registryObjectFromName(BLOCKS, "galactite_ore");

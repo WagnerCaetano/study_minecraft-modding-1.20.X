@@ -1,7 +1,7 @@
-package br.com.wagnercaetano.datagen;
+package br.com.wagnercaetano.spaceores.datagen;
 
-import br.com.wagnercaetano.block.ModBlocks;
-import br.com.wagnercaetano.item.ModItems;
+import br.com.wagnercaetano.spaceores.block.ModBlocks;
+import br.com.wagnercaetano.spaceores.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.world.level.ItemLike;

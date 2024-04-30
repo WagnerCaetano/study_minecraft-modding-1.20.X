@@ -1,10 +1,9 @@
-package br.com.wagnercaetano.block.util;
+package br.com.wagnercaetano.spaceores.util;
 
-import br.com.wagnercaetano.item.ModItems;
+import br.com.wagnercaetano.spaceores.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 

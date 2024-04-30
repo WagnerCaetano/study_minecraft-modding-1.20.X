@@ -1,7 +1,7 @@
-package br.com.wagnercaetano.datagen;
+package br.com.wagnercaetano.spaceores.datagen;
 
-import br.com.wagnercaetano.item.ModItems;
-import br.com.wagnercaetano.item.custom.CustomItemAssets;
+import br.com.wagnercaetano.spaceores.item.ModItems;
+import br.com.wagnercaetano.spaceores.item.custom.CustomItemAssets;
 import br.com.wagnercaetano.spaceores.SpaceOres;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;

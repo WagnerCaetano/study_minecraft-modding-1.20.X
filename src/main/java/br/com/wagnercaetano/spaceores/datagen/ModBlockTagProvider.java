@@ -1,7 +1,7 @@
-package br.com.wagnercaetano.datagen;
+package br.com.wagnercaetano.spaceores.datagen;
 
-import br.com.wagnercaetano.block.ModBlocks;
-import br.com.wagnercaetano.item.util.ModTags;
+import br.com.wagnercaetano.spaceores.block.ModBlocks;
+import br.com.wagnercaetano.spaceores.util.ModTags;
 import br.com.wagnercaetano.spaceores.SpaceOres;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;

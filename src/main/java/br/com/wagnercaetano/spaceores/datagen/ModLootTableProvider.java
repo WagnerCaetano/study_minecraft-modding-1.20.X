@@ -1,6 +1,6 @@
-package br.com.wagnercaetano.datagen;
+package br.com.wagnercaetano.spaceores.datagen;
 
-import br.com.wagnercaetano.datagen.loot.ModBlockLootTables;
+import br.com.wagnercaetano.spaceores.datagen.loot.ModBlockLootTables;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;

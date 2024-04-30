@@ -1,7 +1,7 @@
-package br.com.wagnercaetano.datagen.loot;
+package br.com.wagnercaetano.spaceores.datagen.loot;
 
-import br.com.wagnercaetano.block.ModBlocks;
-import br.com.wagnercaetano.item.ModItems;
+import br.com.wagnercaetano.spaceores.block.ModBlocks;
+import br.com.wagnercaetano.spaceores.item.ModItems;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
@@ -34,7 +34,6 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.add(ModBlocks.DEEPSLATE_GALACTITE_ORE.get(), block -> createOreDrop(block, ModItems.RAW_GALACTITE.get(), 1, 1));
         this.add(ModBlocks.NETHER_GALACTITE_ORE.get(), block -> createOreDrop(block, ModItems.RAW_GALACTITE.get(), 1, 2));
         this.add(ModBlocks.END_STONE_GALACTITE_ORE.get(), block -> createOreDrop(block, ModItems.RAW_GALACTITE.get(), 2, 3));
-
     }
 
     protected LootTable.@NotNull Builder createOreDrop(Block pBlock, Item drop, float min, float max) {
