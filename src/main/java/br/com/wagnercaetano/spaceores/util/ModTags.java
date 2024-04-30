@@ -11,6 +11,7 @@ import net.minecraft.world.level.block.Block;
 public class ModTags {
     public static class Blocks {
         public static final TagKey<Block> METAL_DETECTOR_VALUABLES = createTag("metal_detector_valuables");
+        public static final TagKey<Block> NEEDS_GALACTITE_TOOL = createTag("needs_galactite_tool");
 
         private static TagKey<Block> createTag(String pName) {
             return BlockTags.create(new ResourceLocation(SpaceOres.MOD_ID, pName));

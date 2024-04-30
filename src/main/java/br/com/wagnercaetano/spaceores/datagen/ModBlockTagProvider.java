@@ -34,6 +34,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                         ModBlocks.NETHER_GALACTITE_ORE.get(),
                         ModBlocks.RAW_GALACTITE_BLOCK.get());
 
+        this.tag(ModTags.Blocks.NEEDS_GALACTITE_TOOL)
+                .add(ModBlocks.SOUND_BLOCK.get());
+
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.GALACTITE_ORE.get(),
                         ModBlocks.DEEPSLATE_GALACTITE_ORE.get(),

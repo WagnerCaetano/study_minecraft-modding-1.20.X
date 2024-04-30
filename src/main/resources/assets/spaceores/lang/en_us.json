@@ -7,6 +7,17 @@
   "item.spaceores.strawberry": "Strawberry",
   "item.spaceores.pine_cone": "Pine Cone",
 
+  "item.spaceores.galactite_sword": "Galactite Sword",
+  "item.spaceores.galactite_pickaxe": "Galactite Pickaxe",
+  "item.spaceores.galactite_axe": "Galactite Axe",
+  "item.spaceores.galactite_shovel": "Galactite Shovel",
+  "item.spaceores.galactite_hoe": "Galactite Hoe",
+
+  "item.spaceores.galactite_helmet": "Galactite Helmet",
+  "item.spaceores.galactite_chestplate": "Galactite Chestplate",
+  "item.spaceores.galactite_leggings": "Galactite Leggings",
+  "item.spaceores.galactite_boots": "Galactite Boots",
+
   "tooltip.spaceores.metal_detector": "Finds valuables underground!",
 
   "block.spaceores.galactite_block": "Block of Refined Galactite",
