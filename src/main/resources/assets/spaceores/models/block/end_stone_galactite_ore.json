@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "spaceores:block/end_stone_galactite_ore"
-  }
-}

@@ -5,7 +5,6 @@ import br.com.wagnercaetano.item.ModItems;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootTable;
@@ -30,6 +29,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.RAW_GALACTITE_BLOCK.get());
         this.dropSelf(ModBlocks.SOUND_BLOCK.get());
 
+        this.add(ModBlocks.RAW_GALACTITE_BLOCK.get(), block -> createOreDrop(block, ModItems.RAW_GALACTITE.get(), 9 , 9));
         this.add(ModBlocks.GALACTITE_ORE.get(), block -> createOreDrop(block, ModItems.RAW_GALACTITE.get(), 1, 1));
         this.add(ModBlocks.DEEPSLATE_GALACTITE_ORE.get(), block -> createOreDrop(block, ModItems.RAW_GALACTITE.get(), 1, 1));
         this.add(ModBlocks.NETHER_GALACTITE_ORE.get(), block -> createOreDrop(block, ModItems.RAW_GALACTITE.get(), 1, 2));

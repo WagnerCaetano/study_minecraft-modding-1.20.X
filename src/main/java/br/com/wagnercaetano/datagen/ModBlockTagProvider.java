@@ -29,20 +29,20 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.GALACTITE_ORE.get());
 
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
-                .add(ModBlocks.DEEPSLATE_GALACTITE_ORE.get())
-                .add(ModBlocks.NETHER_GALACTITE_ORE.get())
-                .add(ModBlocks.RAW_GALACTITE_BLOCK.get());
+                .add(ModBlocks.DEEPSLATE_GALACTITE_ORE.get(),
+                        ModBlocks.END_STONE_GALACTITE_ORE.get(),
+                        ModBlocks.NETHER_GALACTITE_ORE.get(),
+                        ModBlocks.RAW_GALACTITE_BLOCK.get());
 
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.GALACTITE_ORE.get(),
                         ModBlocks.DEEPSLATE_GALACTITE_ORE.get(),
                         ModBlocks.NETHER_GALACTITE_ORE.get(),
-
+                        ModBlocks.END_STONE_GALACTITE_ORE.get(),
                         ModBlocks.RAW_GALACTITE_BLOCK.get(),
                         ModBlocks.GALACTITE_BLOCK.get(),
                         ModBlocks.SOUND_BLOCK.get());
 
-        this.tag(Tags.Blocks.NEEDS_NETHERITE_TOOL)
-                .add(ModBlocks.END_STONE_GALACTITE_ORE.get());
+        // this.tag(Tags.Blocks.NEEDS_NETHERITE_TOOL)
     }
 }

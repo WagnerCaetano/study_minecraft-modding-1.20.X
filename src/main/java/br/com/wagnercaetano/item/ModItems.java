@@ -1,6 +1,7 @@
 package br.com.wagnercaetano.item;
 
 import br.com.wagnercaetano.item.custom.FuelItem;
+import br.com.wagnercaetano.item.custom.GalactiteStaff;
 import br.com.wagnercaetano.item.custom.MetalDetectorItem;
 import br.com.wagnercaetano.spaceores.SpaceOres;
 import net.minecraft.world.item.Item;
@@ -23,6 +24,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> STRAWBERRY = ITEMS.register("strawberry",
             () -> new Item(new Item.Properties().food(ModFoods.STRAWBERRY)));
+
+    public static final RegistryObject<Item> GALACTITE_STAFF = ITEMS.register("galactite_staff",
+            () -> new GalactiteStaff(new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> PINE_CONE = ITEMS.register("pine_cone",
             () -> new FuelItem(new Item.Properties(), 400));

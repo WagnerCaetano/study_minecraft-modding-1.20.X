@@ -73,6 +73,7 @@ public class SpaceOres
 
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(ModItems.METAL_DETECTOR);
+            event.accept(ModItems.GALACTITE_STAFF);
         }
     }
 
