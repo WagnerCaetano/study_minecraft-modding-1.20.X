@@ -75,14 +75,6 @@ public class SpaceOres
         if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(ModItems.METAL_DETECTOR);
             event.accept(ModItems.GALACTITE_STAFF);
-            event.accept(ModItems.GALACTITE_PICKAXE);
-            event.accept(ModItems.GALACTITE_AXE);
-            event.accept(ModItems.GALACTITE_SHOVEL);
-            event.accept(ModItems.GALACTITE_HOE);
-        }
-
-        if (event.getTabKey() == CreativeModeTabs.COMBAT) {
-            event.accept(ModItems.GALACTITE_SWORD);
         }
     }
 

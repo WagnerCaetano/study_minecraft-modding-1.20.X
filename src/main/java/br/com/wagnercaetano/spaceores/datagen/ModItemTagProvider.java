@@ -6,10 +6,15 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public class ModItemTagProvider extends ItemTagsProvider {
@@ -21,10 +26,9 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
-        this.tag(ItemTags.TRIMMABLE_ARMOR)
-                .add(ModItems.GALACTITE_HELMET.get(),
-                        ModItems.GALACTITE_CHESTPLATE.get(),
-                        ModItems.GALACTITE_LEGGINGS.get(),
-                        ModItems.GALACTITE_BOOTS.get());
+        List<RegistryObject<Item>> items = new ArrayList<>(ModItems.ITEMS.getEntries());
+        items.stream().filter(item -> item.get() instanceof ArmorItem).forEach(item -> {
+            this.tag(ItemTags.TRIMMABLE_ARMOR).add(item.get());
+        });
     }
 }
