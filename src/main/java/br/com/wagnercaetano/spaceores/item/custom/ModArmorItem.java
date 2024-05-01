@@ -11,13 +11,20 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
 import java.util.Map;
+import java.util.Optional;
 
 public class ModArmorItem extends ArmorItem {
 
     private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP =
-            (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>()).put(ModArmorMaterials.GALACTITE,
+            (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
+                    .put(ModArmorMaterials.GALACTITE,
                         new MobEffectInstance(MobEffects.SLOW_FALLING, 200, 0,
-                                false, false, true)).build();
+                                false, false, true))
+                    .put(ModArmorMaterials.CONSTELLARITE,
+                        new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 0,
+                                false, false, true,
+                                null, Optional.of(new MobEffectInstance.FactorData(300))))
+                    .build();
 
     public ModArmorItem(ArmorMaterial pMaterial, Type pType, Properties pProperties) {
         super(pMaterial, pType, pProperties);

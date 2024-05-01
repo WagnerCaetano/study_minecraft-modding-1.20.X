@@ -6,6 +6,7 @@ import br.com.wagnercaetano.spaceores.item.custom.CustomItemAssets;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
+import net.minecraft.util.StringUtil;
 import net.minecraft.world.item.*;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -32,9 +33,9 @@ public class ModItemModelProvider extends ItemModelProvider {
                 .forEach(itemRegistryObject -> {
             Item item = itemRegistryObject.get();
             if(item instanceof ArmorItem) {
-                trimmedArmorItem(itemRegistryObject);
+                trimmedArmorItem(itemRegistryObject, itemRegistryObject.getId().getPath().split("_")[0]);
             } else if (item instanceof TieredItem) {
-                simpleHandHeldItem(itemRegistryObject);
+                simpleHandHeldItem(itemRegistryObject, itemRegistryObject.getId().getPath().split("_")[0]);
             }
              else if (!(item instanceof BlockItem) || item instanceof ItemNameBlockItem) {
                 simpleBlockItem(itemRegistryObject);
@@ -44,7 +45,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     }
 
     // Shoutout to El_Redstoniano for making this
-    private void trimmedArmorItem(RegistryObject<Item> itemRegistryObject) {
+    private void trimmedArmorItem(RegistryObject<Item> itemRegistryObject, String material) {
         final String MOD_ID = SpaceOres.MOD_ID; // Change this to your mod id
 
         if(itemRegistryObject.get() instanceof ArmorItem armorItem) {
@@ -60,8 +61,9 @@ public class ModItemModelProvider extends ItemModelProvider {
                     default -> "";
                 };
 
-                String armorItemPath = "item/" + armorItem;
-                String trimPath = "trims/items/" + armorType + "_trim_" + trimMaterial.location().getPath();
+                String materialPath = StringUtil.isNullOrEmpty(material) ? "item/" : "item/" + material + "/";
+                String armorItemPath = materialPath + armorItem;
+                String trimPath = "trims/" + materialPath + armorType + "_trim_" + trimMaterial.location().getPath();
                 String currentTrimName = armorItemPath + "_" + trimMaterial.location().getPath() + "_trim";
                 ResourceLocation armorItemResLoc = new ResourceLocation(MOD_ID, armorItemPath);
                 ResourceLocation trimResLoc = new ResourceLocation(trimPath); // minecraft namespace
@@ -85,23 +87,23 @@ public class ModItemModelProvider extends ItemModelProvider {
                         .predicate(mcLoc("trim_type"), trimValue).end()
                         .texture("layer0",
                                 new ResourceLocation(MOD_ID,
-                                        "item/" + itemRegistryObject.getId().getPath()));
+                                        materialPath + itemRegistryObject.getId().getPath()));
             });
         }
     }
 
 
-    private void simpleHandHeldItem(RegistryObject<Item> item) {
-        setResourceItemModel(item, "item/handheld");
+    private void simpleHandHeldItem(RegistryObject<Item> item, String material) {
+        setResourceItemModel(item, "item/handheld", StringUtil.isNullOrEmpty(material) ? "item/" : "item/" + material + "/");
     }
 
     private void simpleBlockItem(RegistryObject<Item> item) {
-        setResourceItemModel(item, "item/generated");
+        setResourceItemModel(item, "item/generated", "item/");
     }
 
-    private void setResourceItemModel(RegistryObject<Item> item, String type) {
+    private void setResourceItemModel(RegistryObject<Item> item, String type, String path) {
         withExistingParent(item.getId().getPath(),
                 new ResourceLocation(type)).texture("layer0",
-                new ResourceLocation(SpaceOres.MOD_ID, "item/" + item.getId().getPath()));
+                new ResourceLocation(SpaceOres.MOD_ID, path + item.getId().getPath()));
     }
 }

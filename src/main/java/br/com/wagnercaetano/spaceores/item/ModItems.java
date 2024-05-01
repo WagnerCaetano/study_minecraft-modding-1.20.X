@@ -11,15 +11,19 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import static br.com.wagnercaetano.spaceores.item.ModOreInfoTable.generateItems;
+import static br.com.wagnercaetano.spaceores.item.ModItemOreInfoTable.generateMaterialItems;
 
 public class ModItems {
-    public static final DeferredRegister<Item> ITEMS =
-            DeferredRegister.create(ForgeRegistries.ITEMS, SpaceOres.MOD_ID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, SpaceOres.MOD_ID);
 
     public static final RegistryObject<Item> GALACTITE = ITEMS.register("galactite",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RAW_GALACTITE = ITEMS.register("raw_galactite",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> CONSTELLARITE = ITEMS.register("constellarite",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_CONSTELLARITE = ITEMS.register("raw_constellarite",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> METAL_DETECTOR = ITEMS.register("metal_detector",
@@ -34,7 +38,8 @@ public class ModItems {
             () -> new FuelItem(new Item.Properties(), 400));
 
     public static void register(IEventBus eventBus) {
-        generateItems(ITEMS, ModOreInfoTable.GALACTITE);
-        ITEMS.register(eventBus);
+        generateMaterialItems(ITEMS, ModItemOreInfoTable.CONSTELLARITE);
+        generateMaterialItems(ITEMS, ModItemOreInfoTable.GALACTITE)
+                .register(eventBus);
     }
 }

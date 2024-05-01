@@ -13,7 +13,9 @@ import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
 
-    GALACTITE("galactite", 25, new int[] {5, 7, 5, 4}, 12, SoundEvents.ARMOR_EQUIP_GOLD,
+    CONSTELLARITE("constellarite", 20, new int[] {4, 6, 4, 3}, 10, SoundEvents.ARMOR_EQUIP_GOLD,
+            0.5F, 0.0F, () -> Ingredient.of(ModItems.CONSTELLARITE.get())),
+    GALACTITE("galactite", 25, new int[] {5, 7, 5, 4}, 12, SoundEvents.ARMOR_EQUIP_DIAMOND,
             1.0F, 0.05F, () -> Ingredient.of(ModItems.GALACTITE.get()));
 
     private final String name;

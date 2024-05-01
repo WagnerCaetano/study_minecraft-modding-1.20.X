@@ -1,12 +1,26 @@
 {
+  "item.spaceores.constellarite": "Pulsating Constellarite",
+  "item.spaceores.raw_constellarite": "Raw Constellarite",
   "item.spaceores.galactite": "Refined Galactite",
   "item.spaceores.raw_galactite": "Raw Galactite",
+
 
   "item.spaceores.metal_detector": "Metal Detector",
   "item.spaceores.galactite_staff": "Galactite Staff",
   "item.spaceores.strawberry": "Strawberry",
   "item.spaceores.strawberry_seeds": "Strawberry Seeds",
   "item.spaceores.pine_cone": "Pine Cone",
+
+  "item.spaceores.constellarite_sword": "Constellarite Sword",
+  "item.spaceores.constellarite_pickaxe": "Constellarite Pickaxe",
+  "item.spaceores.constellarite_axe": "Constellarite Axe",
+  "item.spaceores.constellarite_shovel": "Constellarite Shovel",
+  "item.spaceores.constellarite_hoe": "Constellarite Hoe",
+
+  "item.spaceores.constellarite_helmet": "Constellarite Helmet",
+  "item.spaceores.constellarite_chestplate": "Constellarite Chestplate",
+  "item.spaceores.constellarite_leggings": "Constellarite Leggings",
+  "item.spaceores.constellarite_boots": "Constellarite Boots",
 
   "item.spaceores.galactite_sword": "Galactite Sword",
   "item.spaceores.galactite_pickaxe": "Galactite Pickaxe",
@@ -21,9 +35,15 @@
 
   "tooltip.spaceores.metal_detector": "Finds valuables underground!",
 
+  "block.spaceores.constellarite_block": "Block of Pulsating Constellarite",
+  "block.spaceores.raw_constellarite_block": "Block of Raw Constellarite",
   "block.spaceores.galactite_block": "Block of Refined Galactite",
   "block.spaceores.raw_galactite_block": "Block of Raw Galactite",
 
+  "block.spaceores.constellarite_ore": "Constellarite Ore",
+  "block.spaceores.deepslate_constellarite_ore": "Deepslate Constellarite Ore",
+  "block.spaceores.end_stone_constellarite_ore": "Endstone Constellarite Ore",
+  "block.spaceores.nether_constellarite_ore": "Nether Constellarite Ore",
   "block.spaceores.galactite_ore": "Galactite Ore",
   "block.spaceores.deepslate_galactite_ore": "Deepslate Galactite Ore",
   "block.spaceores.end_stone_galactite_ore": "Endstone Galactite Ore",

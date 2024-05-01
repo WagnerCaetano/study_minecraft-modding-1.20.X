@@ -22,23 +22,37 @@ public class ModBlockTagProvider extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
         this.tag(ModTags.Blocks.METAL_DETECTOR_VALUABLES)
-                .add(ModBlocks.GALACTITE_ORE.get()).addTag(Tags.Blocks.ORES);
+                .add(ModBlocks.GALACTITE_ORE.get(), ModBlocks.CONSTELLARITE_ORE.get())
+                .addTag(Tags.Blocks.ORES);
 
         this.tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.GALACTITE_BLOCK.get())
-                .add(ModBlocks.GALACTITE_ORE.get());
+                .add(ModBlocks.CONSTELLARITE_ORE.get());
 
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
-                .add(ModBlocks.DEEPSLATE_GALACTITE_ORE.get(),
+                .add(
+                        ModBlocks.DEEPSLATE_CONSTELLARITE_ORE.get(),
+                        ModBlocks.END_STONE_CONSTELLARITE_ORE.get(),
+                        ModBlocks.NETHER_CONSTELLARITE_ORE.get(),
+                        ModBlocks.RAW_CONSTELLARITE_BLOCK.get(),
+                        ModBlocks.GALACTITE_ORE.get(),
+                        ModBlocks.DEEPSLATE_GALACTITE_ORE.get(),
                         ModBlocks.END_STONE_GALACTITE_ORE.get(),
-                        ModBlocks.NETHER_GALACTITE_ORE.get(),
-                        ModBlocks.RAW_GALACTITE_BLOCK.get());
+                        ModBlocks.NETHER_GALACTITE_ORE.get());
+
+        this.tag(ModTags.Blocks.NEEDS_CONSTELLARITE_TOOL)
+                .add(ModBlocks.RAW_CONSTELLARITE_BLOCK.get(),ModBlocks.SOUND_BLOCK.get());
 
         this.tag(ModTags.Blocks.NEEDS_GALACTITE_TOOL)
-                .add(ModBlocks.SOUND_BLOCK.get());
+                .add(ModBlocks.RAW_GALACTITE_BLOCK.get(),ModBlocks.SOUND_BLOCK.get());
 
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(ModBlocks.GALACTITE_ORE.get(),
+                .add(ModBlocks.CONSTELLARITE_ORE.get(),
+                        ModBlocks.DEEPSLATE_CONSTELLARITE_ORE.get(),
+                        ModBlocks.NETHER_CONSTELLARITE_ORE.get(),
+                        ModBlocks.END_STONE_CONSTELLARITE_ORE.get(),
+                        ModBlocks.RAW_CONSTELLARITE_BLOCK.get(),
+                        ModBlocks.GALACTITE_ORE.get(),
                         ModBlocks.DEEPSLATE_GALACTITE_ORE.get(),
                         ModBlocks.NETHER_GALACTITE_ORE.get(),
                         ModBlocks.END_STONE_GALACTITE_ORE.get(),

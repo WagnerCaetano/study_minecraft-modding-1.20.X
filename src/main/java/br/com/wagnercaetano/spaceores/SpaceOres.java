@@ -20,6 +20,12 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
+/*
+* MATERIAL PROGRESSION
+* CONSTELLARITE  <     GALACTITE    <    NEBULIUM     <    STELLARITE   <   BOÖTES VOID
+* BEFORE DIAMOND - BEFORE NETHERITE - AFTER NETHERITE - AFTER NEBULIUM - AFTER STELLARITE
+*     GRAY       -       BLUE       -   MISC PURPLE   -  MISC YELLOW    -    MISC RED
+* */
 @Mod(SpaceOres.MOD_ID)
 public class SpaceOres
 {
@@ -52,6 +58,8 @@ public class SpaceOres
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.GALACTITE);
             event.accept(ModItems.RAW_GALACTITE);
+            event.accept(ModItems.CONSTELLARITE);
+            event.accept(ModItems.RAW_CONSTELLARITE);
             event.accept(ModItems.PINE_CONE);
         }
 
@@ -62,6 +70,12 @@ public class SpaceOres
             event.accept(ModBlocks.DEEPSLATE_GALACTITE_ORE);
             event.accept(ModBlocks.NETHER_GALACTITE_ORE);
             event.accept(ModBlocks.END_STONE_GALACTITE_ORE);
+            event.accept(ModBlocks.CONSTELLARITE_BLOCK);
+            event.accept(ModBlocks.RAW_CONSTELLARITE_BLOCK);
+            event.accept(ModBlocks.CONSTELLARITE_ORE);
+            event.accept(ModBlocks.DEEPSLATE_CONSTELLARITE_ORE);
+            event.accept(ModBlocks.NETHER_CONSTELLARITE_ORE);
+            event.accept(ModBlocks.END_STONE_CONSTELLARITE_ORE);
         }
 
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {

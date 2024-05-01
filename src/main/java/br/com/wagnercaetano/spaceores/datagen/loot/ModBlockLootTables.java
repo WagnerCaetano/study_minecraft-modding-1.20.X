@@ -1,6 +1,7 @@
 package br.com.wagnercaetano.spaceores.datagen.loot;
 
 import br.com.wagnercaetano.spaceores.block.ModBlocks;
+import br.com.wagnercaetano.spaceores.block.ModBlockOreInfoTable;
 import br.com.wagnercaetano.spaceores.block.custom.StrawberryCropBlock;
 import br.com.wagnercaetano.spaceores.item.ModItems;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
@@ -29,15 +30,14 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
+        this.dropSelf(ModBlocks.CONSTELLARITE_BLOCK.get());
         this.dropSelf(ModBlocks.GALACTITE_BLOCK.get());
-        this.dropSelf(ModBlocks.RAW_GALACTITE_BLOCK.get());
+
         this.dropSelf(ModBlocks.SOUND_BLOCK.get());
 
-        this.add(ModBlocks.RAW_GALACTITE_BLOCK.get(), block -> createOreDrop(block, ModItems.RAW_GALACTITE.get(), 9 , 9));
-        this.add(ModBlocks.GALACTITE_ORE.get(), block -> createOreDrop(block, ModItems.RAW_GALACTITE.get(), 1, 1));
-        this.add(ModBlocks.DEEPSLATE_GALACTITE_ORE.get(), block -> createOreDrop(block, ModItems.RAW_GALACTITE.get(), 1, 1));
-        this.add(ModBlocks.NETHER_GALACTITE_ORE.get(), block -> createOreDrop(block, ModItems.RAW_GALACTITE.get(), 1, 2));
-        this.add(ModBlocks.END_STONE_GALACTITE_ORE.get(), block -> createOreDrop(block, ModItems.RAW_GALACTITE.get(), 2, 3));
+        ModBlockOreInfoTable.processOreLootTable(ModBlocks.BLOCKS, this::add, this::dropSelf, this);
+
+
 
         LootItemCondition.Builder lootBuilder = LootItemBlockStatePropertyCondition
                 .hasBlockStateProperties(ModBlocks.STRAWBERRY_CROP.get())
@@ -47,7 +47,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                         ModItems.STRAWBERRY.get(), ModItems.STRAWBERRY_SEEDS.get(), lootBuilder));
     }
 
-    protected LootTable.@NotNull Builder createOreDrop(Block pBlock, Item drop, float min, float max) {
+    public LootTable.@NotNull Builder createOreDrop(Block pBlock, Item drop, float min, float max) {
         return createSilkTouchDispatchTable(pBlock,
                 applyExplosionDecay(pBlock, LootItem.lootTableItem(drop)
                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(min, max)))
