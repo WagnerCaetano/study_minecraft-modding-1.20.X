@@ -1,8 +1,8 @@
 package br.com.wagnercaetano.spaceores.datagen;
 
+import br.com.wagnercaetano.spaceores.constants.Constants;
 import br.com.wagnercaetano.spaceores.item.ModItems;
 import br.com.wagnercaetano.spaceores.SpaceOres;
-import br.com.wagnercaetano.spaceores.item.custom.CustomItemAssets;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackType;
@@ -29,7 +29,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         List<RegistryObject<Item>> items = new ArrayList<>(ModItems.ITEMS.getEntries());
 
-        items.stream().filter(CustomItemAssets::isNotCustomItem)
+        items.stream().filter(Constants.CustomAssets::isNotCustom)
                 .forEach(itemRegistryObject -> {
             Item item = itemRegistryObject.get();
             if(item instanceof ArmorItem) {

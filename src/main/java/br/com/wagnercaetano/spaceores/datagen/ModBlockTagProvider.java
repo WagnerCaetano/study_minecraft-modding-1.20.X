@@ -1,17 +1,25 @@
 package br.com.wagnercaetano.spaceores.datagen;
 
+import br.com.wagnercaetano.spaceores.block.ModBlockOreInfoTable;
 import br.com.wagnercaetano.spaceores.block.ModBlocks;
 import br.com.wagnercaetano.spaceores.util.ModTags;
 import br.com.wagnercaetano.spaceores.SpaceOres;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
+
+import static br.com.wagnercaetano.spaceores.block.ModBlockOreInfoTable.getByRegistryBlock;
 
 public class ModBlockTagProvider extends BlockTagsProvider {
 
@@ -21,44 +29,19 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
+        List<RegistryObject<Block>> blocks = new ArrayList<>(ModBlocks.BLOCKS.getEntries());
+        blocks.forEach(block -> {
+                    ModBlockOreInfoTable modBlockOreInfoTable = getByRegistryBlock(block);
+                    if(Objects.nonNull(modBlockOreInfoTable)) {
+                        modBlockOreInfoTable.getRequiresTool().forEach(tool ->
+                            this.tag(tool).add(block.get())
+                        );
+                        this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block.get());
+                    }
+                });
+
         this.tag(ModTags.Blocks.METAL_DETECTOR_VALUABLES)
-                .add(ModBlocks.GALACTITE_ORE.get(), ModBlocks.CONSTELLARITE_ORE.get())
                 .addTag(Tags.Blocks.ORES);
-
-        this.tag(BlockTags.NEEDS_IRON_TOOL)
-                .add(ModBlocks.GALACTITE_BLOCK.get())
-                .add(ModBlocks.CONSTELLARITE_ORE.get());
-
-        this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
-                .add(
-                        ModBlocks.DEEPSLATE_CONSTELLARITE_ORE.get(),
-                        ModBlocks.END_STONE_CONSTELLARITE_ORE.get(),
-                        ModBlocks.NETHER_CONSTELLARITE_ORE.get(),
-                        ModBlocks.RAW_CONSTELLARITE_BLOCK.get(),
-                        ModBlocks.GALACTITE_ORE.get(),
-                        ModBlocks.DEEPSLATE_GALACTITE_ORE.get(),
-                        ModBlocks.END_STONE_GALACTITE_ORE.get(),
-                        ModBlocks.NETHER_GALACTITE_ORE.get());
-
-        this.tag(ModTags.Blocks.NEEDS_CONSTELLARITE_TOOL)
-                .add(ModBlocks.RAW_CONSTELLARITE_BLOCK.get(),ModBlocks.SOUND_BLOCK.get());
-
-        this.tag(ModTags.Blocks.NEEDS_GALACTITE_TOOL)
-                .add(ModBlocks.RAW_GALACTITE_BLOCK.get(),ModBlocks.SOUND_BLOCK.get());
-
-        this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(ModBlocks.CONSTELLARITE_ORE.get(),
-                        ModBlocks.DEEPSLATE_CONSTELLARITE_ORE.get(),
-                        ModBlocks.NETHER_CONSTELLARITE_ORE.get(),
-                        ModBlocks.END_STONE_CONSTELLARITE_ORE.get(),
-                        ModBlocks.RAW_CONSTELLARITE_BLOCK.get(),
-                        ModBlocks.GALACTITE_ORE.get(),
-                        ModBlocks.DEEPSLATE_GALACTITE_ORE.get(),
-                        ModBlocks.NETHER_GALACTITE_ORE.get(),
-                        ModBlocks.END_STONE_GALACTITE_ORE.get(),
-                        ModBlocks.RAW_GALACTITE_BLOCK.get(),
-                        ModBlocks.GALACTITE_BLOCK.get(),
-                        ModBlocks.SOUND_BLOCK.get());
 
         // this.tag(Tags.Blocks.NEEDS_NETHERITE_TOOL)
     }

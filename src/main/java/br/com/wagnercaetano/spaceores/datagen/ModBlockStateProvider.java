@@ -3,7 +3,7 @@ package br.com.wagnercaetano.spaceores.datagen;
 import br.com.wagnercaetano.spaceores.block.ModBlocks;
 import br.com.wagnercaetano.spaceores.SpaceOres;
 import br.com.wagnercaetano.spaceores.block.custom.StrawberryCropBlock;
-import br.com.wagnercaetano.spaceores.interfaces.BlockItemModelType;
+import br.com.wagnercaetano.spaceores.constants.Constants;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -14,32 +14,21 @@ import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.lang.reflect.Field;
-import java.util.Map;
-import java.util.function.Consumer;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Function;
 
 public class ModBlockStateProvider extends BlockStateProvider {
-    
-    private final Map<String, Consumer<RegistryObject<Block>>> modBlockStateMap = Map.of(
-        "blockWithItem", this::blockWithItem
-    );
 
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
         super(output, SpaceOres.MOD_ID, exFileHelper);
     }
 
-    @SuppressWarnings("unchecked")
     @Override
     protected void registerStatesAndModels() {
-        for(Field field : ModBlocks.class.getFields()) {
-            try {
-                if (field.isAnnotationPresent(BlockItemModelType.class))
-                    this.modBlockStateMap.get(field.getAnnotation(BlockItemModelType.class).value()).accept((RegistryObject<Block>) field.get(RegistryObject.class));
-            } catch (IllegalAccessException e) {
-                throw new RuntimeException(e);
-            }
-        }
+        List<RegistryObject<Block>> blocks = new ArrayList<>(ModBlocks.BLOCKS.getEntries());
+        blocks.stream().filter(Constants.CustomAssets::isNotCustom)
+                .forEach(this::blockWithItem);
         
         blockStraberryCrop((CropBlock) ModBlocks.STRAWBERRY_CROP.get(), "strawberry_stage", "strawberry_stage");
     }

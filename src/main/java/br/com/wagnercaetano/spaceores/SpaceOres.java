@@ -55,41 +55,7 @@ public class SpaceOres
 
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(ModItems.GALACTITE);
-            event.accept(ModItems.RAW_GALACTITE);
-            event.accept(ModItems.CONSTELLARITE);
-            event.accept(ModItems.RAW_CONSTELLARITE);
-            event.accept(ModItems.PINE_CONE);
-        }
 
-        if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
-            event.accept(ModBlocks.GALACTITE_BLOCK);
-            event.accept(ModBlocks.RAW_GALACTITE_BLOCK);
-            event.accept(ModBlocks.GALACTITE_ORE);
-            event.accept(ModBlocks.DEEPSLATE_GALACTITE_ORE);
-            event.accept(ModBlocks.NETHER_GALACTITE_ORE);
-            event.accept(ModBlocks.END_STONE_GALACTITE_ORE);
-            event.accept(ModBlocks.CONSTELLARITE_BLOCK);
-            event.accept(ModBlocks.RAW_CONSTELLARITE_BLOCK);
-            event.accept(ModBlocks.CONSTELLARITE_ORE);
-            event.accept(ModBlocks.DEEPSLATE_CONSTELLARITE_ORE);
-            event.accept(ModBlocks.NETHER_CONSTELLARITE_ORE);
-            event.accept(ModBlocks.END_STONE_CONSTELLARITE_ORE);
-        }
-
-        if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
-            event.accept(ModItems.STRAWBERRY);
-        }
-
-        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(ModBlocks.SOUND_BLOCK);
-        }
-
-        if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
-            event.accept(ModItems.METAL_DETECTOR);
-            event.accept(ModItems.GALACTITE_STAFF);
-        }
     }
 
     @SubscribeEvent

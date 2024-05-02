@@ -10,20 +10,18 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 public class ModArmorItem extends ArmorItem {
 
-    private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP =
-            (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
+    private static final Map<ArmorMaterial, ModEffectInstance> MATERIAL_TO_EFFECT_MAP =
+            (new ImmutableMap.Builder<ArmorMaterial, ModEffectInstance>())
                     .put(ModArmorMaterials.GALACTITE,
-                        new MobEffectInstance(MobEffects.SLOW_FALLING, 200, 0,
-                                false, false, true))
+                        new ModEffectInstance(MobEffects.SLOW_FALLING, 100, 0,
+                                false, false, true, false, 0))
                     .put(ModArmorMaterials.CONSTELLARITE,
-                        new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 200, 0,
-                                false, false, true,
-                                null, Optional.of(new MobEffectInstance.FactorData(300))))
+                        new ModEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 50, 0,
+                                false, false, true, true, 0.001))
                     .build();
 
     public ModArmorItem(ArmorMaterial pMaterial, Type pType, Properties pProperties) {
@@ -42,17 +40,23 @@ public class ModArmorItem extends ArmorItem {
     }
 
     private void evaluateArmorEffects(Player player) {
-        for (Map.Entry<ArmorMaterial, MobEffectInstance> entry : MATERIAL_TO_EFFECT_MAP.entrySet()) {
+        for (Map.Entry<ArmorMaterial, ModEffectInstance> entry : MATERIAL_TO_EFFECT_MAP.entrySet()) {
             ArmorMaterial mapArmorMaterial = entry.getKey();
-            MobEffectInstance mapEffect = entry.getValue();
+            ModEffectInstance mapEffect = entry.getValue();
 
             if(hasCorrectArmorOn(mapArmorMaterial, player)) {
-                addStatusEffect(player, mapArmorMaterial, mapEffect);
+                if (mapEffect.isRandomize()){
+                    if (Math.random() > mapEffect.getRandomOdds()) {
+                        addStatusEffect(player, mapEffect);
+                    }
+                } else {
+                    addStatusEffect(player, mapEffect);
+                }
             }
         }
     }
 
-    private void addStatusEffect(Player player, ArmorMaterial material, MobEffectInstance effect) {
+    private void addStatusEffect(Player player, MobEffectInstance effect) {
         if (!player.hasEffect(effect.getEffect())) {
             player.addEffect(new MobEffectInstance(effect));
         }
