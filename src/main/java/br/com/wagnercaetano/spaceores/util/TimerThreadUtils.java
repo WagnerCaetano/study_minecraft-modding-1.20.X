@@ -1,7 +1,5 @@
 package br.com.wagnercaetano.spaceores.util;
 
-import net.minecraft.world.entity.player.Player;
-
 import java.util.function.Consumer;
 
 public class TimerThreadUtils {

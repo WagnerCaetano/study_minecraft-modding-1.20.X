@@ -1,12 +1,32 @@
 {
+  "item.spaceores.constellarite": "Constellarite Pulsante",
+  "item.spaceores.raw_constellarite": "Constellarite Bruto",
   "item.spaceores.galactite": "Galactite Refinado",
   "item.spaceores.raw_galactite": "Galactite Bruto",
 
   "item.spaceores.metal_detector": "Detector de Metal",
   "item.spaceores.galactite_staff": "Cajado de Galactite",
   "item.spaceores.strawberry": "Morango",
-  "item.spaceores.strawberry_seeds": "Strawberry Seeds",
+  "item.spaceores.strawberry_seeds": "Semente de Morango",
+  "item.spaceores.corn": "Milho",
+  "item.spaceores.corn_seeds": "Semente de Milho",
   "item.spaceores.pine_cone": "Pinha",
+
+  "item.spaceores.rhino_spawn_egg": "Ovo de Spawn de Rinoceronte",
+
+  "item.spaceores.bar_brawl_music_disc": "Disco de Música - Bar Brawl",
+  "item.spaceores.bar_brawl_music_disc.desc": "Bryan Tech - Bar Brawl (CC0)",
+
+  "item.spaceores.constellarite_sword": "Espada de Constellarite",
+  "item.spaceores.constellarite_pickaxe": "Picareta de Constellarite",
+  "item.spaceores.constellarite_axe": "Machado de Constellarite",
+  "item.spaceores.constellarite_shovel": "Pá de Constellarite",
+  "item.spaceores.constellarite_hoe": "Enxada de Constellarite",
+
+  "item.spaceores.constellarite_helmet": "Capacete de Constellarite",
+  "item.spaceores.constellarite_chestplate": "Peitoral de Constellarite",
+  "item.spaceores.constellarite_leggings": "Calças de Constellarite",
+  "item.spaceores.constellarite_boots": "Botas de Constellarite",
 
   "item.spaceores.galactite_sword": "Espada de Galactite",
   "item.spaceores.galactite_pickaxe": "Picareta de Galactite",
@@ -21,15 +41,30 @@
 
   "tooltip.spaceores.metal_detector": "Encontra minerais valiosos a baixo!",
 
+  "block.spaceores.constellarite_block": "Bloco de Constellarite Pulsante",
+  "block.spaceores.raw_constellarite_block": "Minério de Constellarite Bruto",
   "block.spaceores.galactite_block": "Bloco de Galactite Refinado",
   "block.spaceores.raw_galactite_block": "Minério de Galactite Bruto",
 
+  "block.spaceores.constellarite_ore": "Minério de Constellarite",
+  "block.spaceores.deepslate_constellarite_ore": "Minério de Constellarite de Pedra Inferior",
+  "block.spaceores.end_stone_constellarite_ore": "Minério de Constellarite do End",
+  "block.spaceores.nether_constellarite_ore": "Minério de Constellarite do Nether",
   "block.spaceores.galactite_ore": "Minério de Galactite",
   "block.spaceores.deepslate_galactite_ore": "Minério de Galactite de Pedra Inferior",
   "block.spaceores.end_stone_galactite_ore": "Minério de Galactite do End",
   "block.spaceores.nether_galactite_ore": "Minério de Galactite do Nether",
 
   "block.spaceores.sound_block": "Bloco de Som",
+  "sounds.spaceores.metal_detector_found_ore": "Detector de Metal encontrou um minério!",
 
-  "creativetab.spaceores": "SpaceOres Tab"
+  "sounds.spaceores.sound_block_break": "Bloco de som quebrado",
+  "sounds.spaceores.sound_block_step": "Passo no Bloco de Som",
+  "sounds.spaceores.sound_block_place": "Bloco de Som colocado",
+  "sounds.spaceores.sound_block_hit": "Bloco de Som atingido",
+  "sounds.spaceores.sound_block_fall": "Caindo no Bloco de Som",
+
+  "entity.minecraft.villager.spaceores.soundmaster": "Mestre do Som",
+
+  "creativetab.spaceores": "Aba do SpaceOres",
 }

@@ -2,6 +2,7 @@ package br.com.wagnercaetano.spaceores.datagen.loot;
 
 import br.com.wagnercaetano.spaceores.block.ModBlocks;
 import br.com.wagnercaetano.spaceores.block.ModBlockOreInfoTable;
+import br.com.wagnercaetano.spaceores.block.custom.CornCropBlock;
 import br.com.wagnercaetano.spaceores.block.custom.StrawberryCropBlock;
 import br.com.wagnercaetano.spaceores.item.ModItems;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
@@ -24,6 +25,17 @@ import java.util.Set;
 
 public class ModBlockLootTables extends BlockLootSubProvider {
 
+    private static final LootItemCondition.Builder BLOCK_HIGH_CROP_BUILDER = LootItemBlockStatePropertyCondition
+            .hasBlockStateProperties(ModBlocks.CORN_CROP.get())
+            .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CornCropBlock.AGE, 7))
+            .or(LootItemBlockStatePropertyCondition
+                    .hasBlockStateProperties(ModBlocks.CORN_CROP.get())
+                    .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CornCropBlock.AGE, 8)));
+
+    LootItemCondition.Builder CROP_BUILDER = LootItemBlockStatePropertyCondition
+            .hasBlockStateProperties(ModBlocks.STRAWBERRY_CROP.get())
+            .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(StrawberryCropBlock.AGE, 5));
+
     public ModBlockLootTables() {
         super(Set.of(), FeatureFlags.REGISTRY.allFlags());
     }
@@ -37,14 +49,12 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
         ModBlockOreInfoTable.processOreLootTable(ModBlocks.BLOCKS, this::add, this::dropSelf, this);
 
+        this.add(ModBlocks.CORN_CROP.get(), createCropDrops(ModBlocks.CORN_CROP.get(), ModItems.CORN.get(),
+                ModItems.CORN_SEEDS.get(), BLOCK_HIGH_CROP_BUILDER));
 
-
-        LootItemCondition.Builder lootBuilder = LootItemBlockStatePropertyCondition
-                .hasBlockStateProperties(ModBlocks.STRAWBERRY_CROP.get())
-                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(StrawberryCropBlock.AGE, 5));
         this.add(ModBlocks.STRAWBERRY_CROP.get(),
                 createCropDrops(ModBlocks.STRAWBERRY_CROP.get(),
-                        ModItems.STRAWBERRY.get(), ModItems.STRAWBERRY_SEEDS.get(), lootBuilder));
+                        ModItems.STRAWBERRY.get(), ModItems.STRAWBERRY_SEEDS.get(), CROP_BUILDER));
     }
 
     public LootTable.@NotNull Builder createOreDrop(Block pBlock, Item drop, float min, float max) {

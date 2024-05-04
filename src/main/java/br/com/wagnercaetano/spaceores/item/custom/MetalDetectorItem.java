@@ -1,9 +1,11 @@
 package br.com.wagnercaetano.spaceores.item.custom;
 
+import br.com.wagnercaetano.spaceores.sound.ModSounds;
 import br.com.wagnercaetano.spaceores.util.ModTags;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -18,6 +20,8 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class MetalDetectorItem extends Item {
+
+
 
     public MetalDetectorItem(Properties properties) {
         super(properties);
@@ -36,6 +40,9 @@ public class MetalDetectorItem extends Item {
                 if (isValuableBlock(state)) {
                     outputValuableCoordinates(positionClicked.below(i), player, state.getBlock());
                     foundBlock = true;
+
+                    pContext.getLevel().playSeededSound(null, positionClicked.getX(), positionClicked.getY(), positionClicked.getZ(),
+                            ModSounds.METAL_DETECTOR_FOUND_ORE.get(), SoundSource.BLOCKS, 1, 1, 0);
 
                     break;
                 }

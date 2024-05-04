@@ -1,14 +1,20 @@
 package br.com.wagnercaetano.spaceores.util;
 
+import br.com.wagnercaetano.spaceores.SpaceOres;
 import br.com.wagnercaetano.spaceores.block.ModBlockOreInfoTable;
+import br.com.wagnercaetano.spaceores.block.custom.StrawberryCropBlock;
 import br.com.wagnercaetano.spaceores.item.ModItems;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 

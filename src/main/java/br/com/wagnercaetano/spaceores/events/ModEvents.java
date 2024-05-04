@@ -7,7 +7,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraft.world.entity.player.Player;
 
 @Mod.EventBusSubscriber
-public class FallDamageHandler {
+public class ModEvents {
 
     @SubscribeEvent
     public static void onLivingFallEvent(LivingFallEvent event) {

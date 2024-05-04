@@ -30,5 +30,8 @@ public class ModItemTagProvider extends ItemTagsProvider {
         items.stream().filter(item -> item.get() instanceof ArmorItem).forEach(item -> {
             this.tag(ItemTags.TRIMMABLE_ARMOR).add(item.get());
         });
+
+        this.tag(ItemTags.MUSIC_DISCS)
+                .add(ModItems.BAR_BRAWL_MUSIC_DISC.get());
     }
 }

@@ -4,12 +4,18 @@
   "item.spaceores.galactite": "Refined Galactite",
   "item.spaceores.raw_galactite": "Raw Galactite",
 
-
   "item.spaceores.metal_detector": "Metal Detector",
   "item.spaceores.galactite_staff": "Galactite Staff",
   "item.spaceores.strawberry": "Strawberry",
   "item.spaceores.strawberry_seeds": "Strawberry Seeds",
+  "item.spaceores.corn": "Corn",
+  "item.spaceores.corn_seeds": "Corn Seeds",
   "item.spaceores.pine_cone": "Pine Cone",
+
+  "item.spaceores.rhino_spawn_egg": "Rhino Spawn Egg",
+
+  "item.spaceores.bar_brawl_music_disc": "Bar Brawl Music Disc",
+  "item.spaceores.bar_brawl_music_disc.desc": "Bryan Tech - Bar Brawl (CC0)",
 
   "item.spaceores.constellarite_sword": "Constellarite Sword",
   "item.spaceores.constellarite_pickaxe": "Constellarite Pickaxe",
@@ -50,6 +56,15 @@
   "block.spaceores.nether_galactite_ore": "Nether Galactite Ore",
 
   "block.spaceores.sound_block": "Sound Block",
+  "sounds.spaceores.metal_detector_found_ore": "Metal Detector Found Ore",
+
+  "sounds.spaceores.sound_block_break": "Sound Block Break",
+  "sounds.spaceores.sound_block_step": "Sound Block Step",
+  "sounds.spaceores.sound_block_place": "Sound Block Place",
+  "sounds.spaceores.sound_block_hit": "Sound Block Hit",
+  "sounds.spaceores.sound_block_fall": "Sound Block Fall",
+
+  "entity.minecraft.villager.spaceores.soundmaster": "Sound Master",
 
   "creativetab.spaceores": "SpaceOres Tab"
 }

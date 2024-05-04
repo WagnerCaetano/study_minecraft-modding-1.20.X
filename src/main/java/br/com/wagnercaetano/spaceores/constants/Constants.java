@@ -26,7 +26,9 @@ public class Constants {
     public enum CustomAssets {
 
         GALACTITE_STAFF("galactite_staff"),
-        STRAWBERRY_CROP("strawberry_crop");
+        STRAWBERRY_CROP("strawberry_crop"),
+        CORN_CROP("corn_crop"),
+        RHINO_SPAWN_EGG("rhino_spawn_egg");
 
         private final String name;
 

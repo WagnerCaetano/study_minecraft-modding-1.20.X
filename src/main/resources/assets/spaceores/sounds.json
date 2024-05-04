@@ -1,0 +1,46 @@
+{
+  "metal_detector_found_ore" : {
+    "subtitles": "sounds.spaceores.metal_detector_found_ore",
+    "sounds": [
+      "spaceores:metal_detector_found_ore"
+    ]
+  },
+  "sound_block_break": {
+    "subtitle": "sounds.spaceores.sound_block_break",
+    "sounds": [
+      "spaceores:sound_block_break"
+    ]
+  },
+  "sound_block_step": {
+    "subtitle": "sounds.spaceores.sound_block_step",
+    "sounds": [
+      "spaceores:sound_block_step"
+    ]
+  },
+  "sound_block_place": {
+    "subtitle": "sounds.spaceores.sound_block_place",
+    "sounds": [
+      "spaceores:sound_block_place"
+    ]
+  },
+  "sound_block_hit": {
+    "subtitle": "sounds.spaceores.sound_block_hit",
+    "sounds": [
+      "spaceores:sound_block_hit"
+    ]
+  },
+  "sound_block_fall": {
+    "subtitle": "sounds.spaceores.sound_block_fall",
+    "sounds": [
+      "spaceores:sound_block_fall"
+    ]
+  },
+  "bar_brawl": {
+    "sounds": [
+      {
+        "name": "spaceores:bar_brawl",
+        "stream": true
+      }
+    ]
+  }
+}

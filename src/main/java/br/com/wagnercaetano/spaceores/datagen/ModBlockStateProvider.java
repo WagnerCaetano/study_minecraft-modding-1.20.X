@@ -2,6 +2,7 @@ package br.com.wagnercaetano.spaceores.datagen;
 
 import br.com.wagnercaetano.spaceores.block.ModBlocks;
 import br.com.wagnercaetano.spaceores.SpaceOres;
+import br.com.wagnercaetano.spaceores.block.custom.CornCropBlock;
 import br.com.wagnercaetano.spaceores.block.custom.StrawberryCropBlock;
 import br.com.wagnercaetano.spaceores.constants.Constants;
 import net.minecraft.data.PackOutput;
@@ -9,6 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.client.model.generators.BlockModelProvider;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -17,6 +19,9 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
+
+import static br.com.wagnercaetano.spaceores.util.CropContentUtils.cornStates;
+import static br.com.wagnercaetano.spaceores.util.CropContentUtils.strawberryStates;
 
 public class ModBlockStateProvider extends BlockStateProvider {
 
@@ -30,23 +35,21 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blocks.stream().filter(Constants.CustomAssets::isNotCustom)
                 .forEach(this::blockWithItem);
         
-        blockStraberryCrop((CropBlock) ModBlocks.STRAWBERRY_CROP.get(), "strawberry_stage", "strawberry_stage");
+        blockStraberryCrop((CropBlock) ModBlocks.STRAWBERRY_CROP.get(), "strawberry_stage_");
+        makeCornCrop((CropBlock) ModBlocks.CORN_CROP.get(), "corn_stage_");
     }
 
-    private void blockStraberryCrop(CropBlock block, String modelName, String textureName) {
-        Function<BlockState, ConfiguredModel[]> function = state -> strawberryStates(state, block, modelName, textureName);
+    private void blockStraberryCrop(CropBlock block, String modelName) {
+        Function<BlockState, ConfiguredModel[]> function = state -> strawberryStates(state, block, modelName, models());
 
         getVariantBuilder(block).forAllStates(function);
     }
 
-    private ConfiguredModel[] strawberryStates(BlockState state, CropBlock block, String modelName, String textureName) {
-        ConfiguredModel[] models = new ConfiguredModel[1];
-        models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((StrawberryCropBlock) block).getAgeProperty()),
-                new ResourceLocation(SpaceOres.MOD_ID, "block/" + textureName + state.getValue(((StrawberryCropBlock) block).getAgeProperty()))).renderType("cutout"));
+    public void makeCornCrop(CropBlock block, String modelName) {
+        Function<BlockState, ConfiguredModel[]> function = state -> cornStates(state, block, modelName, models());
 
-        return models;
+        getVariantBuilder(block).forAllStates(function);
     }
-
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
